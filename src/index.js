@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
+const ranking = require('./ranking')
 
 function createWindow (file) {
   const win = new BrowserWindow({
@@ -7,7 +8,8 @@ function createWindow (file) {
     height: 600,
     webPreferences: {
       nodeIntegration: false,
-      contextIsolation: true
+      contextIsolation: true,
+      preload: path.join(__dirname, './preload.js')
     }
   })
 
@@ -28,4 +30,14 @@ app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
   }
+})
+
+
+//----------------------------------------
+// IPC通信
+//----------------------------------------
+// ランキングデータを返却
+ipcMain.handle('getRanking', async (event) => {
+  const data = await ranking.getData()
+  return(data)
 })

@@ -7,7 +7,35 @@
 </head>
 <body>
 
-<h1>Hello Electron</h1>
+<h1>AppStore売上ランキング</h1>
+<ol id="result"></ol>
 
+<script>
+window.onload = async ()=>{
+  const rank = await getRanking()
+  rank.forEach((item)=>{
+    addList('#result', item.title)
+  })
+}
+
+/**
+ * ランキングを取得
+ */
+async function getRanking(){
+  const ranking = await window.myapi.getRanking()
+  return(ranking)
+}
+
+/**
+ * リストに追加する
+ */
+function addList(id, label){
+  const result = document.querySelector(id)
+  const li = document.createElement('li')
+  const text = document.createTextNode(label)
+  li.appendChild(text)
+  result.appendChild(li)
+}
+</script>
 </body>
 </html>

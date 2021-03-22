@@ -2,7 +2,7 @@
   "name": "electron-sample-nedb",
   "version": "1.0.0",
   "description": "NeDB sample for electron",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "electron .",
     "build-mac": "electron-builder --mac --x64",
@@ -22,8 +22,12 @@
     "appId": "net.makitokatsube.blog.app.nedb",
     "files": [
       "package.json",
-      "index.js",
-      "public/"
+      "src/",
+      "public/",
+      "data/"
+    ],
+    "asarUnpack": [
+      "data/ranking.nedb"
     ],
     "mac": {
       "target": "dmg"
