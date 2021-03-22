@@ -1,0 +1,45 @@
+{
+  "name": "electron-sample-nedb",
+  "version": "1.0.0",
+  "description": "NeDB sample for electron",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "electron-builder --mac --x64",
+    "build-win": "electron-builder --win --x64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katsube/electron-sample-nedb.git"
+  },
+  "author": "M.Katsube",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katsube/electron-sample-nedb/issues"
+  },
+  "homepage": "https://github.com/katsube/electron-sample-nedb#readme",
+  "build": {
+    "appId": "net.makitokatsube.blog.app.nedb",
+    "files": [
+      "package.json",
+      "index.js",
+      "public/"
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "dmg": {
+      "sign": false
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "electron": "^12.0.1",
+    "electron-builder": "^22.10.5"
+  },
+  "dependencies": {
+    "nedb": "^1.8.0"
+  }
+}
