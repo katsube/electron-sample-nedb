@@ -12,7 +12,10 @@
 
 <script>
 window.onload = async ()=>{
+  // メインプロセスからデータ取得
   const rank = await getRanking()
+
+  // 表示する
   rank.forEach((item)=>{
     addList('#result', item.title)
   })

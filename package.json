@@ -13,7 +13,7 @@
     "url": "git+https://github.com/katsube/electron-sample-nedb.git"
   },
   "author": "M.Katsube",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/katsube/electron-sample-nedb/issues"
   },

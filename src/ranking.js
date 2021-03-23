@@ -17,7 +17,6 @@ const path = require('path')
 class RankingModel{
   /**
    * コンストラクタ
-   *
    */
   constructor(){
     // data/ranking.nedbへのフルパスを作成
