@@ -24,7 +24,7 @@
       "package.json",
       "src/",
       "public/",
-      "data/"
+      "data/ranking.nedb"
     ],
     "asarUnpack": [
       "data/ranking.nedb"
