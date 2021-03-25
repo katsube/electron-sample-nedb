@@ -1,7 +1,8 @@
 # Electron Sample - NeDB
 NeDBをマスターデータの格納先として利用するサンプルです。データの追加や削除などは行わない想定です。
+
 ## 解説ページ
-* 
+* [[Electron] NeDBでデータを管理する](https://blog.katsubemakito.net/nodejs/electron/nedb-with-electron)
 
 ## 準備
 Gitでリポジトリを取得します。
