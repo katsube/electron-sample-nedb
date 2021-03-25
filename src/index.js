@@ -7,6 +7,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 const ranking = require('./ranking')
+const Datastore = require('nedb')
 
 function createWindow (file) {
   const win = new BrowserWindow({
@@ -24,6 +25,11 @@ function createWindow (file) {
 
 app.whenReady().then( ()=>{
   createWindow('index.html')
+
+  // 起動ログを保存
+  const file = path.join(app.getPath('userData'), 'launchlog.nedb')
+  const db = new Datastore({filename:file, autoload:true})
+  db.insert({time:new Date().getTime()})
 })
 
 app.on('window-all-closed', () => {
