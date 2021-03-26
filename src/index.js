@@ -9,7 +9,7 @@ const path = require('path')
 const ranking = require('./ranking')
 const Datastore = require('nedb')
 
-function createWindow (file) {
+function createWindow (file='index.html') {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -24,7 +24,7 @@ function createWindow (file) {
 }
 
 app.whenReady().then( ()=>{
-  createWindow('index.html')
+  createWindow()
 
   // 起動ログを保存
   const file = path.join(app.getPath('userData'), 'launchlog.nedb')
