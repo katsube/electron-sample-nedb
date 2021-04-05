@@ -1,5 +1,5 @@
 # Electron Sample - NeDB
-NeDBをマスターデータの格納先として利用するサンプルです。
+NeDBをマスターデータの格納先として利用するサンプルです。アプリ内に埋め込んでマスターデータとして利用する方法と、起動時にNeDB用のファイルを作成し書き込みを行っています。
 
 ## 解説ページ
 * [[Electron] NeDBでデータを管理する](https://blog.katsubemakito.net/nodejs/electron/nedb-with-electron)
